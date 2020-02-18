@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    App
+   <router-view></router-view>
     <div class="red"></div>
   </div>
   
@@ -10,9 +10,5 @@
 </script>
 
 <style>
- .red{
-   width: 375px;
-   height: 100px;
-   background: red;
- }
+
 </style>
