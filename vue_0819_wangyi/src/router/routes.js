@@ -1,31 +1,35 @@
 //引入路由组件
-import firstPage from '../pages/firstPage/firstPage'
-import sort from '../pages/sort/sort'
-import buy from '../pages/buy/buy'
-import shopCar from '../pages/shopCar/shopCar'
-import personal from '../pages/personal/personal'
+import FirstPage from '../pages/FirstPage/FirstPage'
+import Sort from '../pages/Sort/Sort'
+import Buy from '../pages/Buy/Buy'
+import ShopCar from '../pages/ShopCar/ShopCar'
+import Personal from '../pages/Personal/Personal'
 
 //第三步在routes中定义完整路由页面
 export default[
     {   //路由路径
         path:'/firstPage',
         //路由组件
-        component: firstPage
+        component: FirstPage
     },
     {
         path:'/sort',
-        component: sort
+        component: Sort
     },
-    {
+    { 
         path:'/buy',
-        component: buy
+        component: Buy
     },
     {
         path:'/shopCar',
-        component: shopCar
+        component: ShopCar
     },
     {
         path:'/personal',
-        component: personal
+        component: Personal
+    },
+    {
+        path:'/',
+        component: FirstPage
     }
 ]
