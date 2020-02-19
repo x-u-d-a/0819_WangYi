@@ -26,25 +26,77 @@
             <li class="firstPage-item"><a href="#">全球特色</a></li>
           </ul>
         </div>
-        <div class="nav-icon">></div>
+        <div class="nav-icon"><i class="iconfont icon-arrow-down"></i></div>
       </div>  
     <!-- 首页轮播 -->
-     <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">1
-          </div>
-          <div class="swiper-slide">2
-          </div>
-          <div class="swiper-slide">3
-          </div>
-          <div class="swiper-slide">4
-          </div>
-        </div>
-        <div class="swiper-pagination"></div>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="../../common/images/1.webp" alt=""></div>
+        <div class="swiper-slide"><img src="../../common/images/2.webp" alt=""></div>
+        <div class="swiper-slide"><img src="../../common/images/3.webp" alt=""></div>
+        <div class="swiper-slide"><img src="../../common/images/4.webp" alt=""></div>
+        <div class="swiper-slide"><img src="../../common/images/5.webp" alt=""></div>
+        <div class="swiper-slide"><img src="../../common/images/6.webp" alt=""></div>
+        <div class="swiper-slide"><img src="../../common/images/7.webp" alt=""></div>
+        <div class="swiper-slide"><img src="../../common/images/8.webp" alt=""></div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
     <!-- 单行文字 -->
+    <div class="firstPage-lineText">
+      <div class="lineText-item"><i class="iconfont icon-wangyi"></i> <span>网易自营品牌</span></div>
+      <div class="lineText-item"><i class="iconfont icon-dunpai"></i> <span >30天无忧退货</span></div>
+      <div class="lineText-item"><i class="iconfont icon-caifu"></i> <span >48小时快速退款</span></div>
+    </div>
     <!-- 第一栏商品展示 -->
+    <div class="firstPage-goods">
+      <ul class="firstPage-goodsList">
+        <li class="goodsItem">
+          <div class="goodsup"><img src="../../common/images/swiperDown.png" alt=""></div>
+          <div class="goodsdown"><span>新品首发</span></div>
+        </li>
+        <li class="goodsItem">
+          <div class="goodsup"><img src="../../common/images/swiperDown.png" alt=""></div>
+          <div class="goodsdown"><span>新品首发</span></div>
+        </li>
+        <li class="goodsItem">
+          <div class="goodsup"><img src="../../common/images/swiperDown.png" alt=""></div>
+          <div class="goodsdown"><span>新品首发</span></div>
+        </li>
+        <li class="goodsItem">
+          <div class="goodsup"><img src="../../common/images/swiperDown.png" alt=""></div>
+          <div class="goodsdown"><span>新品首发</span></div>
+        </li>
+        <li class="goodsItem">
+          <div class="goodsup"><img src="../../common/images/swiperDown.png" alt=""></div>
+          <div class="goodsdown"><span>新品首发</span></div>
+        </li>
+        <li class="goodsItem">
+          <div class="goodsup"><img src="../../common/images/swiperDown.png" alt=""></div>
+          <div class="goodsdown"><span>新品首发</span></div>
+        </li>
+        <li class="goodsItem">
+          <div class="goodsup"><img src="../../common/images/swiperDown.png" alt=""></div>
+          <div class="goodsdown"><span>新品首发</span></div>
+        </li>
+        <li class="goodsItem">
+          <div class="goodsup"><img src="../../common/images/swiperDown.png" alt=""></div>
+          <div class="goodsdown"><span>新品首发</span></div>
+        </li>
+        <li class="goodsItem">
+          <div class="goodsup"><img src="../../common/images/swiperDown.png" alt=""></div>
+          <div class="goodsdown"><span>新品首发</span></div>
+        </li>
+        <li class="goodsItem">
+          <div class="goodsup"><img src="../../common/images/swiperDown.png" alt=""></div>
+          <div class="goodsdown"><span>新品首发</span></div>
+        </li>
+      </ul>
+    </div>
     <!-- 首页背景图及动态图片滚动显示 -->
+    <div class="back-img">
+
+    </div>
     <!-- 商品列表 -->
     <!-- 新人专享礼 -->
     <!-- 类目热销榜 -->
@@ -61,10 +113,20 @@ import Swiper from 'swiper'
 import 'swiper/css/swiper.min.css'
   export default {
     async mounted(){
-      var mySwiper = new Swiper('.swiper-container', {
-        autoplay: true,//可选选项，自动滑动
-      })
+       new Swiper('.swiper-container', {
+       mousewheel: {
+    eventsTarged: '#my-handle'},
+       autoplay: true,//可选选项，自动滑动
+       pagination: {
+    el: '.swiper-pagination',
+    dynamicBullets: true,
+    dynamicMainBullets: 2
+  },
+         
+    })
+
     }
+   
   }
 </script>
 
@@ -78,6 +140,11 @@ import 'swiper/css/swiper.min.css'
       padding 16px 30px
       display flex
       box-sizing border-box
+      position fixed
+      left 0
+      top 0
+      z-index 99
+      background #fff
       .firstPageLogo
         width 138px
         height 40px
@@ -112,13 +179,14 @@ import 'swiper/css/swiper.min.css'
       position fixed
       left 0
       top 88px
+      z-index 99
+      background #fff
       div
         float left
       .firstPage-Nav
           width 650px
           height 60px
           font-size 28px
-          background #eee  //写完删掉
           overflow hidden
           padding 0 30px
           box-sizing border-box
@@ -137,5 +205,65 @@ import 'swiper/css/swiper.min.css'
       .nav-icon
         width 100px
         height 60px
-        background #ddd  //写完删掉
+        text-align center
+        line-height 60px
+        .iconfont
+          color #333
+          font-weight bold  
+    //轮播图
+    .swiper-container
+      margin-top 148px
+      width 100%
+      height 370px
+      img 
+        width 100%
+        height 100%
+
+  //单行文字
+    .firstPage-lineText
+      width 750px
+      height 72px
+      background #fff
+      line-height 72px
+      display flex
+      justify-content space-around
+      .lineText-item
+        span
+          font-size 24px
+        .iconfont
+          color #dd1a21  
+  //第一栏商品展示
+    .firstPage-goods
+      width 750px
+      height 340px
+      background #fff
+      .goodsItem
+        width 110px
+        height 156px
+        float left 
+        background #fff
+        margin 10px 20px 9px
+        box-sizing border-box
+        .goodsup
+          width 100%
+          height 110px
+          img 
+            width 100%
+            height 100%
+        .goodsdown
+          width 100%
+          height 36px
+          text-align center 
+          line-height 36px
+          margin-top 10px
+
+  //首页背景图及动态图片滚动显示
+    .back-img
+      width 750px
+      height 240px
+      background-image url("../../common/images/back")  
+               
+
+
+
 </style>
