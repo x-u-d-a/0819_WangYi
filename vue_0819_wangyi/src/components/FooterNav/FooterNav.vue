@@ -48,6 +48,7 @@
     display flex
     width 100%
     box-sizing border-box
+    background #fff
     .footerItem
       font-size 23px
       width 20%
