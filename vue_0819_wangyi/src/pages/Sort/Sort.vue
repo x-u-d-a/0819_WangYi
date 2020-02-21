@@ -79,7 +79,7 @@
         border-radius 10px
         outline none
 
-      // 左侧导航栏
+  // 左侧导航栏
   .sort-nav
     position fixed
     top 88px
@@ -105,7 +105,8 @@
         font-size 28px
         box-sizing border-box
         margin 15px 0 30px
-    //商品区
+
+  //商品区
   .goods-container
       position fixed
       right 0
@@ -140,7 +141,6 @@
             img 
               width 144px
               height 144px
-            // span 
               
 
 
