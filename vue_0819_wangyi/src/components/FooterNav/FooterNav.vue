@@ -41,7 +41,7 @@
 <style scoped lang="stylus" rel="stylesheet/stylus">
   @import "../../common/stylus/mixins.styl" 
   #footerContent
-    top-border-1px(#d9d9d9)
+    top-border-1px(#eee)
     position fixed
     left 0
     bottom 0
