@@ -4,6 +4,7 @@ import Sort from '../pages/Sort/Sort'
 import Buy from '../pages/Buy/Buy'
 import ShopCar from '../pages/ShopCar/ShopCar'
 import Personal from '../pages/Personal/Personal'
+import SortRight from '../components/SortRight/SortRight'
 
 //第三步在routes中定义完整路由页面
 export default[
@@ -14,7 +15,13 @@ export default[
     },
     {
         path:'/sort',
-        component: Sort
+        component: Sort,
+        children:[
+            {
+                path:'/sort/right/:id',
+                component: SortRight
+            }
+        ]
     },
     { 
         path:'/buy',
@@ -30,6 +37,6 @@ export default[
     },
     {
         path:'/',
-        component: FirstPage
+        redirect:'Sort'
     }
 ]

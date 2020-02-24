@@ -6,9 +6,11 @@ import "lib-flexible/flexible"
 import router from './router'
 //引入app
 import App from './App.vue'
+import * as API from './api'
 //关闭提示
 Vue.config.productionTip = false
 
+Vue.prototype.$API = API
 new Vue({
   el:'#app',
   components:{App},
