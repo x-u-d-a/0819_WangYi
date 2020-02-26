@@ -9,24 +9,16 @@
         <form class="search_form" action="#">
           <input type="search" name="search" placeholder="搜索商品, 共21338款好物" class="firstPage_input iconfont">
         </form>
-        <button class="firstPge-button">登录</button>
+        <button class="firstPge-button" @click="gotolink">登录</button>
       </div>
     <!-- 首页导航 -->
       <div id="firstPage-NavOut">
-        <div class="firstPage-Nav">
-          <ul class="firstPage-list">
-            <li class="firstPage-item"><a href="#">推荐</a></li>
-            <li class="firstPage-item"><a href="#">居家生活</a></li>
-            <li class="firstPage-item"><a href="#">服饰鞋包</a></li>
-            <li class="firstPage-item"><a href="#">美食酒水</a></li>
-            <li class="firstPage-item"><a href="#">个人清理</a></li>
-            <li class="firstPage-item"><a href="#">母婴亲子</a></li>
-            <li class="firstPage-item"><a href="#">运动旅行</a></li>
-            <li class="firstPage-item"><a href="#">数码家电</a></li>
-            <li class="firstPage-item"><a href="#">全球特色</a></li>
-          </ul>
+        <div class="navleft">
+          <Navleft/>
         </div>
-        <div class="nav-icon"><i class="iconfont icon-arrow-down"></i></div>
+        <div class="navright">
+          <router-view></router-view>
+        </div>
       </div>  
     <!-- 首页轮播 -->
     <div class="swiper-container">
@@ -299,11 +291,10 @@
 import BScroll from 'better-scroll'
 import Swiper from 'swiper'
 import 'swiper/css/swiper.min.css'
+import  Navleft from '../../components/Navleft/Navleft'
   export default {
     async mounted(){
        new Swiper('.swiper-container', {
-        mousewheel: {
-          eventsTarged: '#my-handle'},
           autoplay: true,//可选选项，自动滑动
        pagination: {
           el: '.swiper-pagination',
@@ -317,7 +308,20 @@ import 'swiper/css/swiper.min.css'
       scrollX:true,
       click:true
     })
-    }
+    },
+     components:{
+      Navleft,
+    },
+    methods:{
+        gotolink(){
+ 
+          //点击跳转至上次浏览页面
+         // this.$router.go(-1)
+ 
+          //指定跳转地址
+          this.$router.replace('personal')
+        }
+      }
   }
 </script>
 
@@ -374,37 +378,15 @@ import 'swiper/css/swiper.min.css'
       top 88px
       z-index 99
       background #fff
-      div
-        float left
-      .firstPage-Nav
-          width 650px
-          height 60px
-          font-size 28px
-          overflow hidden
-          padding 0 30px
-          box-sizing border-box
-          margin 0
-          z-index 100
-          .firstPage-list
-            width 1240px
-            height 100%
-            white-space nowrap
-            .firstPage-item
-              float left
-              padding 0 16px
-              a
-                font-weight bold
-                color #333
-                font-size 27px
-                line-height 60px
-      .nav-icon
-        width 100px
+      display flex
+      .navleft
+        width 650px
         height 60px
-        text-align center
-        line-height 60px
-        .iconfont
-          color #333
-          font-weight bold  
+        background #ffffff
+      .navright
+        width 650px
+        height 60px
+        background yellow
     //轮播图
     .swiper-container
       margin-top 148px

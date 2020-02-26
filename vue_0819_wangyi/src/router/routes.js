@@ -37,6 +37,6 @@ export default[
     },
     {
         path:'/',
-        redirect:'Sort'
+        redirect:'firstPage'
     }
 ]

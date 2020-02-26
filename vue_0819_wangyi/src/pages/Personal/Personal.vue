@@ -2,7 +2,7 @@
   <div id="personal-container">
     <!-- 头部区 -->
     <div class="personal-title">
-      <div class="home"><i class="iconfont icon-fangzi"></i></div>
+      <div class="home" @click="gotofirst"><i class="iconfont icon-fangzi"></i></div>
       <img src="../../common/images/logo.png" alt="">
       <div class="big"><i class="iconfont icon-icon-test"></i></div>
       <div class="car"><i class="iconfont icon-gouwuche"></i></div>
@@ -27,6 +27,11 @@
 
 <script >
   export default {
+    methods:{
+      gotofirst(){
+         this.$router.replace('firstPage')
+      }
+    }
   }
 </script>
 
