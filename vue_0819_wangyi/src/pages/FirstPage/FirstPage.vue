@@ -296,24 +296,28 @@
 </template>
 
 <script>
+import BScroll from 'better-scroll'
 import Swiper from 'swiper'
 import 'swiper/css/swiper.min.css'
   export default {
     async mounted(){
        new Swiper('.swiper-container', {
-       mousewheel: {
-    eventsTarged: '#my-handle'},
-       autoplay: true,//可选选项，自动滑动
+        mousewheel: {
+          eventsTarged: '#my-handle'},
+          autoplay: true,//可选选项，自动滑动
        pagination: {
-    el: '.swiper-pagination',
-    dynamicBullets: true,
-    dynamicMainBullets: 2
-  },
+          el: '.swiper-pagination',
+          dynamicBullets: true,
+          dynamicMainBullets: 2
+        },
          
     })
 
+    new BScroll('.firstPage-Nav',{
+      scrollX:true,
+      click:true
+    })
     }
-   
   }
 </script>
 
@@ -346,10 +350,11 @@ import 'swiper/css/swiper.min.css'
         height 56px
         font-size 28px
         margin-right 20px
-        text-align center
+        text-align left 
         line-height 56px
         background #ededed
         border-radius 7px
+        outline none
       .firstPge-button
         width 74px
         height 40px
@@ -379,9 +384,11 @@ import 'swiper/css/swiper.min.css'
           padding 0 30px
           box-sizing border-box
           margin 0
+          z-index 100
           .firstPage-list
-            width 1280px
+            width 1240px
             height 100%
+            white-space nowrap
             .firstPage-item
               float left
               padding 0 16px

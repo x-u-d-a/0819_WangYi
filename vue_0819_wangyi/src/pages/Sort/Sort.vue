@@ -30,6 +30,7 @@
   #sort-container
     width 100%
     height 100%
+    background #ffffff
     //顶部搜索框
     .sort_form
       width 750px
@@ -52,9 +53,8 @@
     //内容区
     .sort-content
       display flex
-      height calc(100vh - 88px)
-      // overflow hidden
-      // margin-top 88px
+      height calc(100vh - 185px)
+      overflow hidden
       .left 
         width 162px  
         background #ffffff

@@ -1,7 +1,6 @@
 <template>
-  <div>
+  <div class="rightContainer">
      <ul class="rightList" v-if="cateObj.categoryList">
-       
        <li v-for="(item,index) in cateObj.categoryList" :key="index">
          <!-- <img class="image1" :src="item.image" alt=""> -->
          <img class="image2" :src="item.wapBannerUrl" alt="">
@@ -19,6 +18,7 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import BScroll from 'better-scroll'
   export default {
     data(){
       return{
@@ -26,10 +26,16 @@
         cateList:[]
       }
     },
+    
     async mounted(){
       this.cateList = await this.$API.getCateList()
       console.log('333',this.$route.params)
       this.cateObj = this.cateList.find(item => item.id ===this.$route.params.id*1)
+
+      //滑动
+      new BScroll('.right',{
+        scrollY:true
+      })
     },
     watch:{
       $route(){
@@ -41,11 +47,11 @@
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
+.rightContainer
   .rightList
     display flex
     justify-content space-between
     flex-wrap wrap
-    
     li
       width 144px
       height 216px
